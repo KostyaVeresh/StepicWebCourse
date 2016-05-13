@@ -3,6 +3,10 @@ def wsgiApp(environ, start_response):
 	headers = [
 		('Content-Type', 'text/plain')
 	]
-	body = environ['wsgi.input'].read()
+	body = environ['QUERY_STRING'].split("&")
+	str = ""
+	for item in body:
+		str += item
+		str += "\n"
 	start_response(status, headers)
-	return [body]
+	return [str]
