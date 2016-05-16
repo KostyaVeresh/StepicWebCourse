@@ -1,4 +1,2 @@
-sudo /etc/init.d/mysql start
-mysql -uroot -e "create database qadb"
-mysql -uroot -e "create user 'box'@'%'"
-mysql -uroot -e "grant all qadb.* to 'box'@'%'"
+sudo /etc/init.d/mysql restart
+mysql -uroot -e "create database qadb; create user 'box'@'%'; grant all qadb.* to 'box'@'%';"
