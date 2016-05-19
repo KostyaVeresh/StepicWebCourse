@@ -11,8 +11,14 @@ class Question(models.Model):
 	author = models.ForeignKey(User, related_name='question_author')
 	likes = models.ManyToManyField(User, related_name='question_likes')
 	
+	class Meta:
+		db_table = 'question'
+	
 class Answer(models.Model):
 	text = models.TextField()
 	added_at = models.DateField()
 	question = models.ForeignKey(Question)
 	author = models.ForeignKey(User, related_name='answer_author')
+	
+	class Meta:
+		db_table = 'answer'
