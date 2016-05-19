@@ -60,11 +60,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'qadb',
-		'USER': 'root',
-		#'USER': 'box',
-		#'PASSWORD': '12345',
-		#'HOST': 'localhost',
-		#'PORT': 3306,
+		'USER': 'box',
     }
 }
 
