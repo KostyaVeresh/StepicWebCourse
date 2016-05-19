@@ -1,4 +1,4 @@
-sudo /etc/init.d/mysql restart
+#sudo /etc/init.d/mysql restart
 mysql -uroot -e "DROP DATABASE qadb"
 mysql -uroot -e "CREATE DATABASE qadb"
 mysql -uroot -e "CREATE USER 'box'@'localhost' IDENTIFIED BY '12345'"
