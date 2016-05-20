@@ -10,15 +10,15 @@ from django.http import Http404
 def test(request, *args, **kwargs):
     return HttpResponse('OK')
 	
-def mainPage(request):
+def mainPage(request, ord='-id', baseurl='/?page='):
 	questions = Question.objects.all()
-	questions = questions.order_by('-id')
+	questions = questions.order_by(ord)
 	try:
 		page = int(request.GET.get('page', 1))
 	except ValueError:
 		raise Http404
 	paginator = Paginator(questions, 10)
-	paginator.baseurl = '/?page='
+	paginator.baseurl = baseurl
 	try:
 		page = paginator.page(page)
 	except EmptyPage:
@@ -27,4 +27,7 @@ def mainPage(request):
 		'questions': page.object_list,
 		'paginator': paginator,
 		'page': page,
-	})	
+	})
+	
+def popularPage(request):
+	return mainPage(request, '-rating',  '/popular/?page=')
