@@ -14,11 +14,6 @@
 	{% endfor %}
 	</ul></nav>
 	{% for q in questions %}
-	<div>
-		<p> {{ q.title }} </p>
-	</div>
-	<div>
-		<p><a href="{{ q.build_url }}"> Question_link </a></p>
-	</div>
+		<a href="{{q.pk}}"> {{q.title}} </a><br>
 	{% endfor %}
 {% endblock %}

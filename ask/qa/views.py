@@ -28,4 +28,3 @@ def mainPage(request):
 		'paginator': paginator,
 		'page': page,
 	})	
-	#return HttpResponse('OK')
