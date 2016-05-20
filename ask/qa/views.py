@@ -31,3 +31,10 @@ def mainPage(request, ord='-id', baseurl='/?page='):
 	
 def popularPage(request):
 	return mainPage(request, '-rating',  '/popular/?page=')
+	
+def questionPage(request, id):
+	try:
+		quest = Question.objects.get(id = id)
+	except Question.DoesNotExist:
+		raise Http404
+	return render(request, 'question.html', {'question': quest})
