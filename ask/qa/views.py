@@ -11,6 +11,7 @@ def test(request, *args, **kwargs):
     return HttpResponse('OK')
 	
 def mainPage(request):
+	"""
 	questions = Question.object.order_by('-added_at')
 	try:
 		page = int(request.GET.get('page', 1))
@@ -22,6 +23,7 @@ def mainPage(request):
 		page = paginator.page(page)
 	except EmptyPage:
 		page = paginator.page(paginator.num_pages)
+	"""
 	"""
 	return render(request, 'main_page.html', {
 		'questions': page.object_list,
