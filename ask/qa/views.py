@@ -4,6 +4,7 @@ from django.shortcuts import render
 
 from django.http import HttpResponse, HttpResponseBadRequest 
 from django.core.paginator import Paginator
+from models import Question, Answer
 
 def test(request, *args, **kwargs):
     return HttpResponse('OK')
@@ -20,9 +21,9 @@ def mainPage(request):
 		page = paginator.page(page)
 	except EmptyPage:
 		page = paginator.page(paginator.num_pages)
-	#return render(request, 'templates/main_page.html, {
-	#	'questions': page.object_list,
-	#	'paginator': paginator,
-	#	'page': page,
-	#})
+	return render(request, 'main_page.html', {
+		'questions': page.object_list,
+		'paginator': paginator,
+		'page': page,
+	})
 	return HttpResponse('OK')
