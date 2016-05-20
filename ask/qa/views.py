@@ -5,6 +5,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseBadRequest 
 from django.core.paginator import Paginator
 from models import Question, Answer
+from django.http import Http404
 
 def test(request, *args, **kwargs):
     return HttpResponse('OK')
