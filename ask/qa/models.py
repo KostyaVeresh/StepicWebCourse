@@ -10,6 +10,10 @@ class Question(models.Model):
 	rating = models.IntegerField(default=0)
 	author = models.ForeignKey(User, related_name='question_author')
 	likes = models.ManyToManyField(User, related_name='question_likes')
+	def __unicode__(self):
+		return self.title
+	def get_absolute_url(self):
+		return '/question/%d/' % self.pk
 	
 	class Meta:
 		db_table = 'question'
