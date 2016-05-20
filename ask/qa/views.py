@@ -20,8 +20,9 @@ def mainPage(request):
 		page = paginator.page(page)
 	except EmptyPage:
 		page = paginator.page(paginator.num_pages)
-	return render(request, 'templates/main_page.html, {
-		'questions': page.object_list,
-		'paginator': paginator,
-		'page': page,
-	})
+	#return render(request, 'templates/main_page.html, {
+	#	'questions': page.object_list,
+	#	'paginator': paginator,
+	#	'page': page,
+	#})
+	return HttpResponse('OK')
