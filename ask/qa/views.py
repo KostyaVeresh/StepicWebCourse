@@ -37,5 +37,9 @@ def questionPage(request, id):
 		quest = Question.objects.get(id = id)
 	except Question.DoesNotExist:
 		raise Http404
-	#return render(request, 'question.html', {'question': quest})
-	return HttpResponse('OK')
+	answers = Answer.objects.filter(question_id=id)
+	return render(request, 'question.html', {
+		'question': quest,
+		'answers': answers
+	})
+	#return HttpResponse('OK')

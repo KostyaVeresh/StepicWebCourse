@@ -3,7 +3,7 @@
 {% block content %}
 	<p>{{ quest.title }}</p><br>
 	<p>{{ quest.text }}</p><br>
-	{% for ans in quest.answer_set.all() %}
+	{% for ans in answers %}
 		<p>{{ ans.text }}</p><br>
 	{% endfor %}
 {% endblock %}
