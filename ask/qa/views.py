@@ -26,6 +26,5 @@ def mainPage(request):
 		'questions': page.object_list,
 		'paginator': paginator,
 		'page': page,
-	})
-	
+	})	
 	#return HttpResponse('OK')
