@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-	<p>{{ quest }}</p><br>
+	<p>{{ quest.title }}</p><br>
+	<p>{{ quest.text }}</p><br>
 	{% for ans in quest.answer_set.all() %}
 		<p>{{ ans.text }}</p><br>
 	{% endfor %}
