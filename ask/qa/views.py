@@ -22,7 +22,7 @@ def mainPage(request):
 		page = paginator.page(page)
 	except EmptyPage:
 		page = paginator.page(paginator.num_pages)
-	return render(request, 'main_page.html', {
+	return render(request, 'index.html', {
 		'questions': page.object_list,
 		'paginator': paginator,
 		'page': page,
