@@ -12,7 +12,7 @@ def test(request, *args, **kwargs):
 	
 def mainPage(request):
 	questions = Question.objects.all()
-	questions = questions.order_by('-added_at')
+	questions = questions.order_by('-id')
 	try:
 		page = int(request.GET.get('page', 1))
 	except ValueError:
