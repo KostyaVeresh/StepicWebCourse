@@ -39,7 +39,6 @@ def questionPage(request, id):
 		raise Http404
 	answers = Answer.objects.filter(question_id=id)
 	return render(request, 'question.html', {
-		'question': quest,
+		'quest': quest,
 		'answers': answers
 	})
-	#return HttpResponse('OK')
